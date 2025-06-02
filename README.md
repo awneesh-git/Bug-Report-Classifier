@@ -104,4 +104,56 @@ explain the proposed approach part. Section 3 presents the
 experimental results. Finally, section 4 concludes the paper and suggests future work.
 ![Screenshot_2-6-2025_132414_](https://github.com/user-attachments/assets/6252b812-777b-4d25-97bf-06951b734501)
 
+# 🐞 Bug Report Classifier
+
+Automatically classify bug reports into categories such as UI Bug, Backend Issue, Performance Bug, etc.
+
+## 🚀 Goal
+
+Help QA teams reduce triage time by using machine learning or LLMs to classify bug reports automatically.
+
+## 📌 Features
+
+- Classifies bug reports into:
+  - UI Bug
+  - Backend Issue
+  - Performance Bug
+  - Others (Customizable)
+- Uses either:
+  - Basic ML (Naive Bayes / SVM via `scikit-learn`)
+  - LLM-based classification (via OpenAI GPT or similar)
+- CLI or notebook interface for experimentation
+
+## 🔍 How It Works
+
+### 1. Data Collection
+
+Sample bug reports are collected from:
+- Public GitHub Issues
+- Jira exports (anonymized examples)
+
+### 2. Preprocessing
+
+- Text normalization
+- Stopword removal
+- Optional: POS tagging or lemmatization
+
+### 3. Classification Models
+
+- Option A: `scikit-learn` pipeline using TF-IDF + Naive Bayes / SVM
+- Option B: Prompt engineering using GPT (zero-shot or few-shot)
+
+### 4. Output
+
+Each report is labeled with a category and a confidence score.
+
+## 💡 Value Proposition
+
+- Saves time for QA leads and triage engineers
+- Can be integrated with internal tools (e.g., JIRA/GitHub bots)
+
+## 📁 Project Structure
+
+
+
 
