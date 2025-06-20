@@ -19,27 +19,27 @@ public class ChatGPTfileUpload {
         // Navigate to ChatGPT
         driver.get("https://chat.openai.com/");
 
-        // ✅ Manually log in to ChatGPT before continuing.
+        // Manually log in to ChatGPT before continuing.
         // Or wait here until login is successful
         // Thread.sleep(60000); // allow time to log in manually
 
-        // ✅ Locate file input on ChatGPT's "Attach file" section.
+        // Locate file input on ChatGPT's "Attach file" section.
         // NOTE: this selector might change often as UI updates.
         WebElement fileInput = driver.findElement(By.cssSelector("input[type='file']"));
 
-        // ✅ Send the path to your file
+        // Send the path to your file
         fileInput.sendKeys("/bugclassiferfile/file.xlsx");
         
+        //You can wait and verify the file uploaded successfully
+        // Enter command to verify bugs type in uploaded file
         driver.findElement(By.id("prompt-textarea")).sendKeys("please classify bug type from uploaded excel file");
         driver.findElement(By.id("prompt-textarea")).sendKeys(Keys.ENTER);
        
 
-        // ✅ You can wait and verify the file uploaded successfully
-        // e.g. wait for file chip or confirmation element to appear
         // WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         // wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".your-confirmation-selector")));
 
-        // 🚀 Done
+        
     }
 }
 
